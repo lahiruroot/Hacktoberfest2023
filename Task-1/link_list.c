@@ -10,7 +10,14 @@ struct Node {
 // Function to create a new node
 
 struct Node* createNode(int data) {
-//  Write the funtion
+    struct Node* node = (struct Node*) malloc(sizeof(struct Node));
+
+    // for safety we are initializing next with NULL
+    node->next = NULL;
+
+    node->data = data;
+
+    return node;
 }
 
 void insertAtEnd(struct Node** head, int data) {
