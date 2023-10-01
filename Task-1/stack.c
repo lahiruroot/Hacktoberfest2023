@@ -29,7 +29,11 @@ void push(struct Stack* stack, int item) {
 }
 
 int pop(struct Stack* stack) {
-   // write the Function to pop an element from the stack
+    if (isEmpty(stack)) {
+        printf("Stack Underflow\n");
+        exit(EXIT_FAILURE);
+    }
+    return stack->data[stack->top--];
 }
 
 int main() {
