@@ -26,10 +26,10 @@ app.post('/books', (req, res) => {
 
 // GET endpoint to retrieve a specific book by ID
 app.get('/books/:id', (req, res) => {
-    const bookId = req.params.id;
+    const bookId = parseInt(req.params.id); // Parse the ID to an integer
     const book = books.find(b => b.id === bookId);
     if (!book) {
-        res.sendStatus(404);
+        res.status(404).send('Book not found'); // Send a message with 404
     } else {
         res.json(book);
     }
@@ -37,10 +37,10 @@ app.get('/books/:id', (req, res) => {
 
 // DELETE endpoint to remove a book by ID
 app.delete('/books/:id', (req, res) => {
-    const bookId = req.params.id;
+    const bookId = parseInt(req.params.id); // Parse the ID to an integer
     const bookIndex = books.findIndex(b => b.id === bookId);
     if (bookIndex === -1) {
-        res.sendStatus(404);
+        res.status(404).send('Book not found'); // Send a message with 404
     } else {
         books.splice(bookIndex, 1);
         res.sendStatus(204);
