@@ -4,7 +4,13 @@
 #define MAX_SIZE 100
 
 struct Queue {
-    // Define the queue structure
+    int data[MAX_SIZE];
+
+    // index to enqueue items to
+    int rear;
+
+    // index to dequeue items from
+    int front;
 };
 
 void initialize(struct Queue* queue) {
