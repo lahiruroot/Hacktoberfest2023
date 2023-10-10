@@ -1,0 +1,25 @@
+#include<stdio.h>
+int find(int []);
+int n;
+int main() {
+    int arr1[100], maxelement, i;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    for(i = 0; i < n; i++) {
+        printf("Element - %d: ", i);
+        scanf("%d", &arr1[i]);
+    }
+    maxelement = find(arr1);
+    printf("Largest element: %d\n\n", maxelement);
+    return 0;
+}
+int find(int arr1[]) {
+    int i = 1, maxelement;
+    maxelement = arr1[0];
+    while(i < n) {
+        if(maxelement < arr1[i]);
+        maxelement = arr1[i];
+        i++;
+    }
+    return maxelement;
+}
