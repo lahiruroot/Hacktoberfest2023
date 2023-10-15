@@ -1,0 +1,13 @@
+Questions 1: Fix the errors, recompile and match against the output provided.
+
+Output:
+This is an "error free" program.
+
+Given Code:
+#include < stdio.h >
+int main()
+{
+printf("This is an
+ "error free" program");
+return 0;
+}
